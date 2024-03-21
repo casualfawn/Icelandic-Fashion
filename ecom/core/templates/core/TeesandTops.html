@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'core/base2.html' %}
 {% block title %} Home {% endblock %}
 
 {% block content %}
@@ -6,20 +6,23 @@
 
 
 
-  <body>
+<body>
+        <h2 class = "mb-12 text-2xl text-center" style = "position:relative;top:5px; left:-20px; margin-bottom:20px;background-color-white;">All Tees and Tops</h2>
+
    <div class="mt-6 px-6 py-6 py-12 bg-gray-100 rounded-xl">
-        <h2 class = "mb-12 text-2xl text-center" style = "position:relative;top:-50px; margin-bottom:20px; background color-transparent;">West Fjords Collection</h2>
-        <div class = "grid grid-cols-3 gap-3">
+        <div class = "grid grid-cols-3 gap-3" style = 'margin-top:10px;'>
             {% for item in items %}
-            <div>
+            <div style = 'margin-bottom:40px;'>
                 <a href="{% url 'item:detail' item.id %}">
                     <div>
+                        <center>
                         <img src="{{ item.image.url }}" class = "rounded-t-xl">
+                            </center>
                     </div>
 
-                    <div class="p-6 bg-white rounded-b-xl">
-                        <h2 class="text-2xl">{{ item.name }}</h2>
-                        <p class = "text-gray-500">Price: {{ item.price }}</p>
+                    <div class="p-6 bg-white rounded-b-xl" style = 'height:55px;width:auto;'>
+                        <p class="text-2l" style = 'margin-top:-4.0%;'>{{ item.name }}</p>
+                        <p class = "text-gray-500" style = 'margin-top:-1%;'>Price: {{ item.price }}</p>
                     </div>
                 </a>
             </div>
@@ -27,7 +30,7 @@
         </div>
     </div>
 
-
     </body>
+
 
 {% endblock %}

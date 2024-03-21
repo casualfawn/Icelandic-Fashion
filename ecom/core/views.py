@@ -3,7 +3,7 @@ from item.models import Category, Item, Collections
 
 
 def index(request):
-    items = Item.objects.filter(is_sold=False)[0:10]
+    items = Item.objects.filter(is_sold=False)[0:9]
     categories = Category.objects.all()
 
     return render(request, 'core/index.html', {
@@ -47,7 +47,7 @@ def HellaMornings(request):
 
 
 def Jackets(request):
-    items = Item.objects.filter(is_sold=False)[0:10]
+    items = Item.objects.filter(category__name='Jackets')
     categories = Category.objects.all()
 
     return render(request, 'core/Jackets.html', {
@@ -56,7 +56,7 @@ def Jackets(request):
     })
 
 def RainCoats(request):
-    items = Item.objects.filter(is_sold=False)[0:10]
+    items = Item.objects.filter(category__name ='Rain Coats')
     categories = Category.objects.all()
 
     return render(request, 'core/RainCoats.html', {
@@ -65,7 +65,7 @@ def RainCoats(request):
     })
 
 def TeesandTops(request):
-    items = Item.objects.filter(is_sold=False)[0:10]
+    items = Item.objects.filter(category__name ='Tees')
     categories = Category.objects.all()
 
     return render(request, 'core/TeesandTops.html', {
@@ -73,7 +73,7 @@ def TeesandTops(request):
         'items': items,
     })
 def Glasses(request):
-    items = Item.objects.filter(is_sold=False)[0:10]
+    items = Item.objects.filter(category__name ='Glasses')
     categories = Category.objects.all()
 
     return render(request, 'core/Glasses.html', {
@@ -82,7 +82,7 @@ def Glasses(request):
     })
 
 def Comfort(request):
-    items = Item.objects.filter(is_sold=False)[0:10]
+    items = Item.objects.filter(category__name ='Comfort')
     categories = Category.objects.all()
 
     return render(request, 'core/Comfort.html', {
@@ -91,7 +91,7 @@ def Comfort(request):
     })
 
 def Sweaters(request):
-    items = Item.objects.filter(is_sold=False)[0:10]
+    items = Item.objects.filter(category__name ='Sweaters')
     categories = Category.objects.all()
 
     return render(request, 'core/Sweaters.html', {
@@ -100,7 +100,7 @@ def Sweaters(request):
     })
 
 def HatsandScarves(request):
-    items = Item.objects.filter(is_sold=False)[0:10]
+    items = Item.objects.filter(category__name ='Hats and Scarves')
     categories = Category.objects.all()
 
     return render(request, 'core/HatsandScarves.html', {

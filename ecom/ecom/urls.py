@@ -8,6 +8,7 @@ from core.views import (index, contact,
                         HatsandScarves)
 from django.conf.urls.static import static
 from django.conf import settings
+from django.urls import re_path as url
 
 urlpatterns = [
     path('', index, name='index'),
