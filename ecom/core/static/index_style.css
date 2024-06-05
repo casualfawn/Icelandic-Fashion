@@ -1,0 +1,43 @@
+.scroll{
+	background-color: transparent;
+	width: 1240px;
+	height: 730px;
+	margin-right: 10px;
+	margin-left: 10px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align:justify;
+	left: 405px;
+	top: 110px;
+}
+
+.fade-in-image {
+    -webkit-animation: 3s ease 3s normal forwards 1 fadein;
+    animation: 3s ease 0s normal forwards 1 fadein;
+    position:absolute;
+}
+
+@keyframes fadein {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+@-webkit-keyframes fadein {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+
+
+.container2 {
+    height:10px;
+    width:10px;
+}
+
+.container2 img {
+    width:50%;
+    height: 50%;
+    overflow:hidden;
+}
