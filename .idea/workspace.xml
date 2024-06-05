@@ -6,20 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4a098617-931b-4ac6-9efe-4bf5881520f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Comfort.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Comfort.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Glasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Glasses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/HatsandScarves.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/HatsandScarves.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/HellaMornings.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/HellaMornings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Jackets.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Jackets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/RainCoats.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/RainCoats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Sweaters.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Sweaters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/TeesandTops.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/TeesandTops.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/base2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Reykjalife.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Reykjalife.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/ecom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/ecom/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/media/product-images/Reykjalife/rain1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/media/product-images/Reykjalife/rain1.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecom/item/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/item/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +26,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/casfa/PycharmProjects/Ecom/ecom/core/static",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/casfa/PycharmProjects/Ecom/ecom/core/static&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ecom/core/static" />
@@ -59,7 +48,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
