@@ -6,29 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4a098617-931b-4ac6-9efe-4bf5881520f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/static/bag1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/static/bag1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/static/reyk3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/static/reyk3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/static/westfjords1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/static/westfjords1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Comfort.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Comfort.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/EastFjordsCollection.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/EastFjordsCollection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Glasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Glasses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/HatsandScarves.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/HatsandScarves.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Jackets.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Jackets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/RainCoats.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/RainCoats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Reykjalife.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Reykjalife.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/Sweaters.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/Sweaters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/TeesandTops.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/TeesandTops.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/WestFjordsCollection.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/WestFjordsCollection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/base2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecom/core/templates/core/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/templates/core/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/ecom/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/ecom/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/ecom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/ecom/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/item/templates/item/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/item/templates/item/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/item/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/item/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecom/media/product-images/hoodie1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/ecom/media/product-images/hoodie1.webp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

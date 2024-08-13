@@ -1460,7 +1460,7 @@
                     <button class="add-cart-btn">add to cart</button>
 
                     <select name="language" style = 'margin-left:18%;position:absolute;margin-top:-3.5%;height:30px;width:80px;'>
-                                <option value="usd">Select Size</option>
+                                <option value="usd">Size</option>
 
             <option value="usd">XL</option>
             <option value="usd">L</option>
@@ -1605,15 +1605,17 @@
             {% block content %}
 
     <body>
+
    <div class="mt-6 px-6 py-6 py-12 bg-gray-100 rounded-xl" style = "background-color:rgb(255, 255, 255);bottom:500px;margin-top:150px;">
 
         <img src = "/media/product-images/new.png" style = 'margin-top:-140px;width:45%;;margin-bottom:280px;margin-left:240px;'>
         <div class = "grid grid-cols-3 gap-3" style = "position:relative;top:-80px; background color:transparent;margin-top:-150px;margin-bottom:-200px;margin-right:2.5%;margin-left:-2.5%;overflow-y:scroll;height:1500px;">
             {% for item in items %}
-            <div>
+
+            <div style = 'margin-bottom:40px;'>
                 <a href="{% url 'item:detail' item.id %}">
                     <div>
-                        <img src="{{ item.image.url }}" class = "rounded-t-xl" style = "width:100%; border: 1px solid var(--cultured);">
+                        <img src="{{ item.image.url }}" class = "rounded-t-xl" style = 'width:380px;'>
                     </div>
 
                     <div class="p-6 bg-white rounded-b-xl" style = "border: 1px solid var(--cultured);background-color:rgb(245, 245, 245);">
@@ -1626,7 +1628,17 @@
       text-transform: capitalize;
       font-size:22px;
 </style>
-                        <h2 class="menu-title" style = "background-color:rgb(245, 245, 245);">{{ item.name }}</h2>
+                      <style>
+           h2 {
+                 color: var(--onyx);
+      font-size: var(--fs-5);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: var(--weight-600);
+           }
+       </style>
+
+                        <h2 style = "background-color:rgb(245, 245, 245);">{{ item.name }}</h2>
                         <p class = "text-gray-500">Price: {{ item.price }}</p>
                     </div>
                 </a>
