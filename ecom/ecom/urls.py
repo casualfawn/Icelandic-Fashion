@@ -6,13 +6,16 @@ from core.views import (index, contact,
     Reykjalife, HellaMornings, Jackets, RainCoats,
     TeesandTops, Glasses, Comfort, Sweaters,
                         HatsandScarves)
+from search.views import SearchView
 from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import re_path as url
-
+from django.urls import path
+from search import views
 urlpatterns = [
-    path('', index, name='index'),
-    path('items/', include('item.urls')),
+                #  path('search/', SearchView, name='search'),
+                  path('', index, name='index'),
+                  path('items/', include('item.urls')),
     path('contact/', contact, name='contact'),
     path('admin/', admin.site.urls),
     path('WestFjordsCollection/', WestFjordsCollection, name='WestFjordsCollection'),

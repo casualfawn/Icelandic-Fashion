@@ -1,15 +1,35 @@
 from django.shortcuts import render
 from item.models import Category, Item, Collections
+from django.db.models import Q
+from django.db.models.functions import Lower
 
 
 def index(request):
-    items = Item.objects.filter(is_sold=False)[0:9]
-    categories = Category.objects.all()
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        # data = Item.objects.get(category=q)
 
-    return render(request, 'core/index.html', {
-        'categories': categories,
-        'items': items,
-    })
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) |
+                                   Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            name = Category.objects.exclude(name='glasses').values_list('id', flat=True)
+            return render(request, 'core/searchindex.html', {
+                'data':data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+
+    else:
+        items = Item.objects.all()
+        categories = Category.objects.all()
+
+        return render(request, 'core/index.html', {
+            'categories': categories,
+            'items': items,
+        })
 
 def WestFjordsCollection(request):
     items = Item.objects.filter(collections__name='West Fjords')
@@ -47,67 +67,160 @@ def HellaMornings(request):
 
 
 def Jackets(request):
-    items = Item.objects.filter(category__name='Jackets')
-    categories = Category.objects.all()
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        # data = Item.objects.get(category=q)
 
-    return render(request, 'core/Jackets.html', {
-        'categories': categories,
-        'items': items,
-    })
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) |  Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            return render(request, 'core/searchindex.html', {
+                'data': data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+    else:
+        items = Item.objects.filter(category__name='jackets')
+        categories = Category.objects.all()
+        return render(request, 'core/Jackets.html', {
+            'categories': categories,
+            'items': items,
+        })
 
 def RainCoats(request):
-    items = Item.objects.filter(category__name ='Rain Coats')
-    categories = Category.objects.all()
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        # data = Item.objects.get(category=q)
 
-    return render(request, 'core/RainCoats.html', {
-        'categories': categories,
-        'items': items,
-    })
-
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) |  Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            return render(request, 'core/searchindex.html', {
+                'data': data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+    else:
+        items = Item.objects.filter(category__name='rain coats')
+        categories = Category.objects.all()
+        return render(request, 'core/RainCoats.html', {
+            'categories': categories,
+            'items': items,
+        })
 def TeesandTops(request):
-    items = Item.objects.filter(category__name ='Tees')
-    categories = Category.objects.all()
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        # data = Item.objects.get(category=q)
 
-    return render(request, 'core/TeesandTops.html', {
-        'categories': categories,
-        'items': items,
-    })
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) | Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            return render(request, 'core/searchindex.html', {
+                'data': data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+    else:
+        items = Item.objects.filter(category__name='shirts')
+        categories = Category.objects.all()
+        return render(request, 'core/TeesandTops.html', {
+            'categories': categories,
+            'items': items,
+        })
+
 def Glasses(request):
-    items = Item.objects.filter(category__name ='Glasses')
-    categories = Category.objects.all()
-
-    return render(request, 'core/Glasses.html', {
-        'categories': categories,
-        'items': items,
-    })
-
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) |  Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            return render(request, 'core/searchindex.html', {
+                'data': data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+    else:
+        items = Item.objects.filter(category__name='glasses')
+        categories = Category.objects.all()
+        return render(request, 'core/Glasses.html', {
+            'categories': categories,
+            'items': items,
+        })
 def Comfort(request):
-    items = Item.objects.filter(category__name ='Comfort')
-    categories = Category.objects.all()
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        # data = Item.objects.get(category=q)
 
-    return render(request, 'core/Comfort.html', {
-        'categories': categories,
-        'items': items,
-    })
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) |  Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            return render(request, 'core/searchindex.html', {
+                'data': data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+    else:
+        items = Item.objects.filter(category__name='comfort')
+        categories = Category.objects.all()
+        return render(request, 'core/Comfort.html', {
+            'categories': categories,
+            'items': items,
+        })
 
 def Sweaters(request):
-    items = Item.objects.filter(category__name ='Sweaters')
-    categories = Category.objects.all()
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        # data = Item.objects.get(category=q)
 
-    return render(request, 'core/Sweaters.html', {
-        'categories': categories,
-        'items': items,
-    })
-
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) |  Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            return render(request, 'core/searchindex.html', {
+                'data': data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+    else:
+        items = Item.objects.filter(category__name='sweaters')
+        categories = Category.objects.all()
+        return render(request, 'core/Sweaters.html', {
+            'categories': categories,
+            'items': items,
+        })
 def HatsandScarves(request):
-    items = Item.objects.filter(category__name ='Hats and Scarves')
-    categories = Category.objects.all()
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        # data = Item.objects.get(category=q)
 
-    return render(request, 'core/HatsandScarves.html', {
-        'categories': categories,
-        'items': items,
-    })
-
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) |  Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            return render(request, 'core/searchindex.html', {
+                'data': data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+    else:
+        items = Item.objects.filter(category__name='hats and scarves')
+        categories = Category.objects.all()
+        return render(request, 'core/HatsandScarves.html', {
+            'categories': categories,
+            'items': items,
+        })
 
 
 

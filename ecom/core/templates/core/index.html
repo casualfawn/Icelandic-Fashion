@@ -10,7 +10,7 @@
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="media/assets/images/logo/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="media/assets/images/logo/icelogo.ico" type="image/x-icon">
 
   <!--
     - custom css link
@@ -158,21 +158,25 @@
         <a href="#" class="header-logo">
         </a>
 
+
+
+
+
+
         <div class="header-search-container">
+<form>
+          <input type="search" name="q" type = 'search' class="search-field" placeholder="Enter your product name...">
 
-          <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
-
-          <button class="search-btn">
+          <button class="search-btn" type = 'submit'>
             <ion-icon name="search-outline"></ion-icon>
           </button>
+</form>
 
         </div>
 
         <div class="header-user-actions">
 
-          <button class="action-btn">
-            <ion-icon name="person-outline"></ion-icon>
-          </button>
+
 
           <button class="action-btn">
             <ion-icon name="heart-outline"></ion-icon>
@@ -194,7 +198,7 @@
 
       <div class="container">
 
-        <ul class="desktop-menu-category-list">
+        <ul class="desktop-menu-category-list" style = 'margin-left:0%;'>
 
           <li class="menu-category">
             <a href="#" class="menu-title">Home</a>
@@ -229,7 +233,7 @@
           </li>
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Women's Items</a>
+            <a href="#" class="menu-title">Women's</a>
 
             <ul class="dropdown-list">
 
@@ -261,7 +265,7 @@
 
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Men's Items</a>
+            <a href="#" class="menu-title">Men's </a>
 
             <ul class="dropdown-list">
 
@@ -581,7 +585,7 @@
               <h2 class="banner-title">Women's latest fashion sale</h2>
 
 
-              <a href="#" class="banner-btn">Shop now</a>
+              <a href="http://127.0.0.1:8000/EastFjordsCollection" class="banner-btn">Shop now</a>
 
             </div>
 
@@ -598,7 +602,7 @@
               <h2 class="banner-title">Men's Styles</h2>
 
 
-              <a href="#" class="banner-btn">Shop now</a>
+              <a href="http://127.0.0.1:8000/Reykjalife/" class="banner-btn">Shop now</a>
 
             </div>
 
@@ -617,7 +621,7 @@
                 starting at &dollar; <b>29</b>.99
               </p>
 
-              <a href="#" class="banner-btn" style = "margin-top:-150px">Shop now</a>
+              <a href="http://127.0.0.1:8000/Jackets" class="banner-btn" style = "margin-top:-150px">Shop now</a>
 
             </div>
 
@@ -656,17 +660,17 @@
               </button>
             </div>
 
-            <ul class="sidebar-menu-category-list">
+            <ul class="sidebar-menu-category-list" style = 'margin-top:0%;'>
 
               <li class="sidebar-menu-category">
 
                 <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
 
                   <div class="menu-title-flex">
-                    <img src="media/assets/images/icons/dress.svg" alt="clothes" width="20" height="20"
+                    <img src="media/assets/images/icons/jacket.png" alt="clothes"  style = 'width:35px;height:35px'
                       class="menu-title-img">
 
-                    <a href="Jackets" class="menu-title"style = 'font-size:120%;'>Jackets</a>
+                    <a href="Jackets" class="menu-title"style = 'margin-left:2.5%;font-size:120%;'>Jackets</a>
                   </div>
 
                   <div>
@@ -715,10 +719,8 @@
                 <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
 
                   <div class="menu-title-flex">
-                    <img src="media/assets/images/icons/shoes.svg" alt="footwear" class="menu-title-img" width="20"
-                      height="20">
-
-                    <a href ='RainCoats' class="menu-title"style = 'font-size:120%;'>RainCoats</a>
+                    <img src="media/assets/images/icons/rain.png" alt="footwear" class="menu-title-img" style = 'width:25px;height:25px;margin-left:3.8%;'>
+                    <a href ='RainCoats' class="menu-title"style = 'margin-left:5%;font-size:120%;'>RainCoats</a>
                   </div>
 
                   <div>
@@ -767,10 +769,9 @@
                 <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
 
                   <div class="menu-title-flex">
-                    <img src="media/assets/images/icons/jewelry.svg" alt="clothes" class="menu-title-img" width="20"
-                      height="20">
+                    <img src="media/assets/images/icons/sweater.png" alt="clothes" class="menu-title-img" style = 'width:25px;height:25px;margin-left:3.8%;'>
 
-                    <a href ='Sweaters' class="menu-title"style = 'font-size:120%;'>Sweaters</a>
+                    <a href ='Sweaters' class="menu-title"style = 'margin-left:6%;font-size:120%;'>Sweaters</a>
                   </div>
 
                   <div>
@@ -812,10 +813,9 @@
                 <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
 
                   <div class="menu-title-flex">
-                    <img src="media/assets/images/icons/perfume.svg" alt="perfume" class="menu-title-img" width="20"
-                      height="20">
+                    <img src="media/assets/images/icons/shirt.png" alt="perfume" class="menu-title-img" style = "width:35px;height:30px;margin-left:3.8%;">
 
-                    <a href ='TeesandTops' class="menu-title"style = 'font-size:120%;'>Tees and Tops</a>
+                    <a href ='TeesandTops' class="menu-title"style = 'margin-left:5.5%;font-size:120%;'>Tees</a>
                   </div>
 
                   <div>
@@ -861,13 +861,12 @@
 
               <li class="sidebar-menu-category">
 
-                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:2px;'>
 
                   <div class="menu-title-flex">
-                    <img src="media/assets/images/icons/cosmetics.svg" alt="cosmetics" class="menu-title-img" width="20"
-                      height="20">
+                    <img src="media/assets/images/icons/hat.png" alt="cosmetics" class="menu-title-img" style = 'width:25px;height:25px;margin-left:3.5%;'>
 
-                    <a href ='HatsandScarves' class="menu-title"style = 'font-size:120%;'>Hats and Scarves</a>
+                    <a href ='HatsandScarves' class="menu-title"style = 'width:200px;margin-left:-7.5%;font-size:120%;'>Hats & Scarves</a>
                   </div>
 
                   <div>
@@ -913,13 +912,12 @@
 
               <li class="sidebar-menu-category">
 
-                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:3px;'>
 
                   <div class="menu-title-flex">
-                    <img src="media/assets/images/icons/glasses.svg" alt="glasses" class="menu-title-img" width="20"
-                      height="20">
+                    <img src="media/assets/images/icons/glasses.png" alt="glasses" class="menu-title-img" style = 'margin-left:7%;width:25px;height:25px;'>
 
-                    <a href ='Glasses' class="menu-title"style = 'font-size:120%;'>Glasses</a>
+                    <a href ='Glasses' class="menu-title"style = 'margin-left:6.5%;font-size:120%;'>Glasses</a>
                   </div>
 
                   <div>
@@ -951,12 +949,12 @@
 
               <li class="sidebar-menu-category">
 
-                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:2px;'>
 
                   <div class="menu-title-flex">
-                    <img src="media/assets/images/icons/bag.svg" alt="bags" class="menu-title-img" width="20" height="20">
+                    <img src="media/assets/images/icons/pants.png" alt="bags" class="menu-title-img" style = 'width:25px;height:25px;margin-left:7%'>
 
-                    <a href ='Comfort' class="menu-title" style = 'font-size:120%;'>Comfort</a>
+                    <a href ='Comfort' class="menu-title" style = 'margin-left:6.5%;font-size:120%;'>Comfort</a>
                   </div>
 
                   <div>
@@ -1429,8 +1427,10 @@
 
                   <div class="showcase-banner">
                     <div class = "container2">
+                    <a href="http://127.0.0.1:8000/items/57/">
 
                       <img src="media/assets/images/products/jacket-3.jpg" alt="headphone collection" style = 'margin-top:100%;height:75%;width:auto;'/>
+                    </a>
                     </div>
                   </div>
                   <div class="showcase-content" style = "margin-top:40%;">
@@ -1439,11 +1439,11 @@
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
                       <ion-icon name="star-outline"></ion-icon>
                     </div>
 
-                    <a href="#">
+                    <a href="http://127.0.0.1:8000/items/57/">
                       <h3 class="showcase-title"> Rugged Jacket of the Fjords</h3>
                     </a>
 
@@ -1451,18 +1451,31 @@
                       Embrace the rugged style of a Fjord adventurer in this stylish new jacket.
                     </p>
 
-                    <div class="price-box">
+                    <div class="price-box" style = 'margin-left:-1%;'>
                       <p class="price">$150.00</p>
 
-                      <del>$200.00</del>
+                      <del style = 'margin-left:-1%;'>$200.00</del>
                     </div>
 
                     <button class="add-cart-btn">add to cart</button>
 
-                    <div class="showcase-status">
+                    <select name="language" style = 'margin-left:18%;position:absolute;margin-top:-3.5%;height:30px;width:80px;'>
+                                <option value="usd">Select Size</option>
+
+            <option value="usd">XL</option>
+            <option value="usd">L</option>
+                    <option value="usd">M</option>
+                                <option value="usd">S</option>
+            <option value="usd">XS</option>
+
+
+
+          </select>
+
+                    <div class="showcase-status" style = 'margin-left:100px;'>
                       <div class="wrapper">
                         <p>
-                          already sold: <b>20</b>
+                          already sold: <b>15</b>
                         </p>
 
                         <p>
@@ -1483,26 +1496,19 @@
 
                         <div class="countdown-content">
 
-                          <p class="display-number">360</p>
+                          <p class="display-number">2</p>
 
                           <p class="display-text">Days</p>
 
                         </div>
 
                         <div class="countdown-content">
-                          <p class="display-number">24</p>
+                          <p class="display-number">3</p>
                           <p class="display-text">Hours</p>
                         </div>
 
-                        <div class="countdown-content">
-                          <p class="display-number">59</p>
-                          <p class="display-text">Min</p>
-                        </div>
 
-                        <div class="countdown-content">
-                          <p class="display-number">00</p>
-                          <p class="display-text">Sec</p>
-                        </div>
+
 
                       </div>
 
@@ -1520,11 +1526,13 @@
 
                   <div class="showcase-banner">
                     <div class = "container2">
+                      <a href = 'http://127.0.0.1:8000/items/58/'>
                     <img src="media/assets/images/products/raincoats22.webp" alt="headphone collection" style = 'margin-top:110%;margin-left:10%;height:auto;width:70%;'/>
+                      </a>
                       </div>
                   </div>
 
-                  <div class="showcase-content" style = "margin-top:40%;">>
+                  <div class="showcase-content" style = "margin-top:38%;">
 
                     <div class="showcase-rating">
                       <ion-icon name="star"></ion-icon>
@@ -1534,19 +1542,17 @@
                       <ion-icon name="star-outline"></ion-icon>
                     </div>
 
-                    <a href="#">
+                    <a href="http://127.0.0.1:8000/items/58/">
                       <h3 class="showcase-title">Refined Rain Coat of the Fjords</h3>
                     </a>
 
                     <p class="showcase-desc">
-                      Lorem ipsum dolor sit amet consectetur Lorem ipsum
-                      dolor dolor sit amet consectetur Lorem ipsum dolor
                     </p>
 
-                    <div class="price-box">
+                    <div class="price-box" style = 'margin-left:-1%;'>
                       <p class="price">$150.00</p>
 
-                      <del>$200.00</del>
+                      <del style = 'margin-left:-1%;'>$200.00</del>
                     </div>
 
                     <button class="add-cart-btn">add to cart</button>
@@ -1562,26 +1568,20 @@
 
                         <div class="countdown-content">
 
-                          <p class="display-number">360</p>
+                          <p class="display-number">3</p>
 
                           <p class="display-text">Days</p>
 
                         </div>
-
-                        <div class="countdown-content">
-                          <p class="display-number">24</p>
+                                 <div class="countdown-content">
+                          <p class="display-number">4</p>
                           <p class="display-text">Hours</p>
                         </div>
 
-                        <div class="countdown-content">
-                          <p class="display-number">59</p>
-                          <p class="display-text">Min</p>
-                        </div>
 
-                        <div class="countdown-content">
-                          <p class="display-number">00</p>
-                          <p class="display-text">Sec</p>
-                        </div>
+
+
+
 
                       </div>
 
@@ -1608,7 +1608,7 @@
    <div class="mt-6 px-6 py-6 py-12 bg-gray-100 rounded-xl" style = "background-color:rgb(255, 255, 255);bottom:500px;margin-top:150px;">
 
         <img src = "/media/product-images/new.png" style = 'margin-top:-140px;width:45%;;margin-bottom:280px;margin-left:240px;'>
-        <div class = "grid grid-cols-3 gap-3" style = "position:relative;top:-80px; background color:transparent;margin-top:-150px;margin-bottom:-200px;margin-right:2.5%;margin-left:-2.5%;">
+        <div class = "grid grid-cols-3 gap-3" style = "position:relative;top:-80px; background color:transparent;margin-top:-150px;margin-bottom:-200px;margin-right:2.5%;margin-left:-2.5%;overflow-y:scroll;height:1500px;">
             {% for item in items %}
             <div>
                 <a href="{% url 'item:detail' item.id %}">

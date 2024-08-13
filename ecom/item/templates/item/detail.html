@@ -1,48 +1,1007 @@
-{% extends 'core/base.html' %}
-
-{% block title %}{{ item.name }}{% endblock %}
+{% extends 'core/base2.html' %}
+{% block title %} Home {% endblock %}
 
 {% block content %}
-<div class="grid grid-cols-5 gap-6">
-    <div class="col-span-3">
-        <img src="{{ item.image.url }}" class="rounded.xl">
-    </div>
 
-    <div class="col-span-2 p-6 bg-gray-150 rounded-xl">
-        <h1 class="mb-6 text-3xl">{{ item.name }}</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-        {% if item.description %}
-        <p class="text-gray-700"><strong>Price: </strong> {{ item.price }}</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iceland Wares</title>
 
-        <p class="text-gray-800">
-            <br>
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/media/assets/images/logo/favicon.ico" type="image/x-icon">
 
-            <strong class="text-gray-600">Desc: </strong>
-            <br>
-            <br>
-            {{ item.description }}
-        </p>
-    {% endif %}
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="{% static 'css/style-prefix.css' %}">
+    <!--
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
 
-     <a href="#" class="inline-block mt-6 px-6 py-3 text-lg font-bold bg-teal-800 text-white hover:bg-teal-900">Contact Seller</a>
-    </div>
-</div>
+</head>
 
-   <div class="mt-6 px-6 py-6 py-12 bg-gray-100 rounded-xl">
-        <h2 class = "mb-12 text-2xl text-center"> You Might Like </h2>
-        <div class = "grid grid-cols-3 gap-3">
-            {% for item in related_items %}
-            <div>
-                <a href="{% url 'item:detail' item.id %}">
-                    <div>
-                        <img src="{{ item.image.url }}" class = "rounded-t-xl">
+<body>
+
+
+    <div class="product-container">
+
+      <div class="container">
+        <div class="sidebar  has-scrollbar" data-mobile-menu>
+
+          <div class="sidebar-category" style = 'margin-top:.5%;'>
+
+            <div class="sidebar-top">
+              <h2 class="sidebar-title" style = 'font-size:20px;'>Shop by Category</h2>
+
+              <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+
+            <ul class="sidebar-menu-category-list">
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+
+                  <div class="menu-title-flex">
+                    <img src="/media/assets/images/icons/dress.svg" alt="clothes" width="20" height="20"
+                      class="menu-title-img">
+
+                    <a href="/Jackets" class="menu-title"style = 'font-size:120%;'>Jackets</a>
+                  </div>
+
+                  <div>
+
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="Jackets" class="sidebar-submenu-title">
+                      <p class="product-name">Shirt</p>
+                      <data value="300" class="stock" title="Available Stock">300</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">shorts & jeans</p>
+                      <data value="60" class="stock" title="Available Stock">60</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">jacket</p>
+                      <data value="50" class="stock" title="Available Stock">50</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">dress & frock</p>
+                      <data value="87" class="stock" title="Available Stock">87</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+
+                  <div class="menu-title-flex">
+                    <img src="/media/assets/images/icons/shoes.svg" alt="footwear" class="menu-title-img" width="20"
+                      height="20">
+
+                    <a href ='/RainCoats' class="menu-title"style = 'font-size:120%;'>RainCoats</a>
+                  </div>
+
+                  <div>
+
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="/RainCoats" class="sidebar-submenu-title">
+                      <p class="product-name">Sports</p>
+                      <data value="45" class="stock" title="Available Stock">45</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Formal</p>
+                      <data value="75" class="stock" title="Available Stock">75</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Casual</p>
+                      <data value="35" class="stock" title="Available Stock">35</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Safety Shoes</p>
+                      <data value="26" class="stock" title="Available Stock">26</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+
+                  <div class="menu-title-flex">
+                    <img src="/media/assets/images/icons/jewelry.svg" alt="clothes" class="menu-title-img" width="20"
+                      height="20">
+
+                    <a href ='/Sweaters' class="menu-title"style = 'font-size:120%;'>Sweaters</a>
+                  </div>
+
+                  <div>
+
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Earrings</p>
+                      <data value="46" class="stock" title="Available Stock">46</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Couple Rings</p>
+                      <data value="73" class="stock" title="Available Stock">73</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Necklace</p>
+                      <data value="61" class="stock" title="Available Stock">61</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+
+                  <div class="menu-title-flex">
+                    <img src="/media/assets/images/icons/perfume.svg" alt="perfume" class="menu-title-img" width="20"
+                      height="20">
+
+                    <a href ='/TeesandTops' class="menu-title"style = 'font-size:120%;'>Tees and Tops</a>
+                  </div>
+
+                  <div>
+
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Clothes Perfume</p>
+                      <data value="12" class="stock" title="Available Stock">12 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Deodorant</p>
+                      <data value="60" class="stock" title="Available Stock">60 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">jacket</p>
+                      <data value="50" class="stock" title="Available Stock">50 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">dress & frock</p>
+                      <data value="87" class="stock" title="Available Stock">87 pcs</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+
+                  <div class="menu-title-flex">
+                    <img src="/media/assets/images/icons/cosmetics.svg" alt="cosmetics" class="menu-title-img" width="20"
+                      height="20">
+
+                    <a href ='/HatsandScarves' class="menu-title"style = 'font-size:120%;'>Hats and Scarves</a>
+                  </div>
+
+                  <div>
+
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Shampoo</p>
+                      <data value="68" class="stock" title="Available Stock">68</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Sunscreen</p>
+                      <data value="46" class="stock" title="Available Stock">46</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Body Wash</p>
+                      <data value="79" class="stock" title="Available Stock">79</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Makeup Kit</p>
+                      <data value="23" class="stock" title="Available Stock">23</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+
+                  <div class="menu-title-flex">
+                    <img src="/media/assets/images/icons/glasses.svg" alt="glasses" class="menu-title-img" width="20"
+                      height="20">
+
+                    <a href ='/Glasses' class="menu-title"style = 'font-size:120%;'>Glasses</a>
+                  </div>
+
+                  <div>
+
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Sunglasses</p>
+                      <data value="50" class="stock" title="Available Stock">50</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Lenses</p>
+                      <data value="48" class="stock" title="Available Stock">48</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
+
+                  <div class="menu-title-flex">
+                    <img src="/media/assets/images/icons/bag.svg" alt="bags" class="menu-title-img" width="20" height="20">
+
+                    <a href ='/Comfort' class="menu-title" style = 'font-size:120%;'>Comfort</a>
+                  </div>
+
+                  <div>
+
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Shopping Bag</p>
+                      <data value="62" class="stock" title="Available Stock">62</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Gym Backpack</p>
+                      <data value="35" class="stock" title="Available Stock">35</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Purse</p>
+                      <data value="80" class="stock" title="Available Stock">80</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="#" class="sidebar-submenu-title">
+                      <p class="product-name">Wallet</p>
+                      <data value="75" class="stock" title="Available Stock">75</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+       <div class="product-showcase">
+
+            <h3 class="showcase-heading" style = "margin-top:50px;font-size:20px;">Best Sellers</h3>
+
+            <div class="showcase-wrapper">
+
+              <div class="showcase-container" style = 'overflow-y:scroll;height:345px;'>
+
+                <div class="showcase" style = 'padding-bottom:35px;margin-top:20px;'>
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="/media/assets/images/products/fancyjacket1.webp" alt="baby fabric shoes" width="75" height="75"
+                      class="showcase-img">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">Gretla Oblivion Jacket</h4>
+                    </a>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
                     </div>
 
-                    <div class="p-6 bg-white rounded-b-xl">
-                        <h2 class="text-2xl">{{ item.name }}</h2>
-                        <p class = "text-gray-750">Price: {{ item.price }}</p>
+                    <div class="price-box">
+                      <del>$5.00</del>
+                      <p class="price">$4.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+<div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/assets/images/products/fancyjacket4.webp" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">West Fjords Vest</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+                <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/assets/images/products/fancyjacket2.webp" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">West Fjords Performance</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+                <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/assets/images/products/fancyjacket3.webp" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">West Fjords Hooded Jacket</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+                <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/assets/images/products/womensweater3.jpg" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">Diamond Beach Cozy Sweater </h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+                <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/assets/images/products/womensweater2.webp" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">Diamond Beach Puffin Sweater</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+                <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/assets/images/products/womensweater1.webp" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">Diamond Beach Frost Sweater</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+                       <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/product-images/Reykjalife/rain5.webp" alt="East Fjords Headband" class="showcase-img" width="75"
+                       height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">Reyk Bright Jacket</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$15.00</del>
+                    <p class="price">$179.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+                <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/assets/images/products/fancysnood1.webp" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">West Fjords Scarf</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+                <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/product-images/WestFjords/scarf3.jpg" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">East Fjords Scarf</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+
+
+              <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/product-images/scarf2.webp" alt="men's hoodies t-shirt" class="showcase-img"
+                       width="75" height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">Reyk Scarf</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$17.00</del>
+                    <p class="price">$7.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+              <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/product-images/scarf1.webp" alt="East Fjords Headband" class="showcase-img" width="75"
+                       height="75">
+                </a>
+
+                <div class="showcase-content">
+
+                  <a href="#">
+                    <h4 class="showcase-title">Hella Scarf</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$15.00</del>
+                    <p class="price">$12.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+              <div class="showcase" style = 'padding-bottom:35px;'>
+
+                <a href="#" class="showcase-img-box">
+                  <img src="/media/product-images/scarf4.webp" alt="East Fjords Headband" class="showcase-img" width="75"
+                       height="75">
+                </a>
+
+                <div class="showcase-content" style="padding-bottom:7%;">
+
+                  <a href="#">
+                    <h4 class="showcase-title">City Scarf</h4>
+                  </a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <del>$15.00</del>
+                    <p class="price">$12.00</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+            </div>
+
+
+             </div>
+
+          </div>
+
+
+
+
+        </div>
+
+
+      </div>
+
+
+
+        <div class="product-box"  style = 'margin-top:0.1%;' >
+
+          <div class="product-featured" style = 'width:94%;'>
+
+ <div class="showcase-container" style = 'height:520px;width:500px;background-color:#F3F3F3'>
+
+                <div class="showcase" style = 'height:80%;width:90%'>
+
+                  <div class="showcase-banner" style = 'height:80%;'>
+                    <div class = "container2">
+                    <a href="http://127.0.0.1:8000/items/57/">
+
+                      <img src="{{ item.image.url }}"   alt="headphone collection" style = 'margin-top:0%;margin-left:4%;height:75%;width:70%;'/>
+                    </a>
+                    </div>
+                  </div>
+                  <div class="showcase-content" style = "margin-top:10%;">
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <a href="http://127.0.0.1:8000/items/57/">
+                      <h3 class="showcase-title"> {{ item.name }}</h3>
+                    </a>
+
+                    <p class="showcase-desc">
+                      {{ item.description }}
+                    </p>
+
+                    <div class="price-box" style = 'margin-left:-1%;'>
+                      <p class="price">{{ item.price }}</p>
+
+                      <del style = 'margin-left:-1%;'>$200.00</del>
+                    </div>
+
+                    <button class="add-cart-btn">add to cart</button>
+
+
+                    <div class="countdown-box">
+
+                      <p class="countdown-desc">
+
+
+                        <script>
+                          (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  //I'm adding this section so I don't have to keep updating this pen every year :-)
+  //remove this if you don't need it
+  let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "09/30/",
+      birthday = dayMonth + yyyy;
+
+
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {
+
+        const now = new Date().getTime(),
+              distance = countDown - now;
+
+          document.getElementById("hours").innerText = Math.floor((distance % (hour)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+                        </script>
+                        Hurry Up! Offer ends in:
+                      </p>
+
+                     <div id="countdown">
+    <ul style = 'margin-top:-5%;'>
+
+      <li><span id="hours" style = "opacity:0;"></span></li>
+      <li><span id="minutes" style = 'margin-left:25%;'></span> Minutes</li>
+      </ul>
+                       <ul style = 'margin-top:-6.7%;margin-left:30%;'>
+      <li><span id="seconds" style = 'margin-left:35%;margin-top:-50px;' ></span> Seconds</li>
+    </ul>
+  </div>
+
+                    </div>
+                  </div>
+                </div>
+ </div>
+
+
+   <div class="mt-6 px-6 py-6 py-12 rounded-xl" style = 'margin-top:2%;'>
+       <style>
+           h2 {
+                 color: var(--onyx);
+      font-size: var(--fs-5);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: var(--weight-600);
+           }
+       </style>
+        <h2 class = "mb-12 text-2xl text-center" style = 'margin-left:-75%;margin-top:-2.5%;font-size:24px;'> Similar Items</h2>
+
+
+
+
+                	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		.outer {
+			padding: 10px;
+			overflow-y: hidden;
+			width: 400px;
+			height: 90%;
+			border: 1px solid blue;
+		}
+
+		.flex-container {
+			overflow-x: auto;
+			height: calc(100% + 17px);
+			padding-bottom: 17px;
+			display: flex;
+			flex-wrap: nowrap;
+		}
+
+		.card {
+			flex: 1 0 100px;
+			height: 150px;
+			display: inline-block;
+			margin: 5px;
+			border: 1px solid;
+		}
+	</style>
+	<script>
+		function clickLeft() {
+			let container = document.querySelector('#flex-container');
+			container.scrollTo({
+				left:container.scrollLeft - 200,
+				top: 0,
+				behavior: "smooth"
+			});
+		}
+
+		function clickRight() {
+			let container = document.querySelector('#flex-container');
+			container.scrollTo({
+				left:container.scrollLeft + 200,
+				top: 0,
+				behavior: "smooth"
+			});
+		}
+	</script>
+
+                	<div id="app"></div>
+
+		<div class='flex-container' id="flex-container" style = 'width:1000px;height:280px;margin-top:-3.5%;margin-left:-4.5%;overflow-y:hidden;padding-bottom:5%;padding-right:50px;background-color:transparent;'>
+       {% for item in related_items %}
+            <div style = 'width:300px;height:270px;margin-left:20px;padding-top:10px;background-color:#F3F3F3;'>
+                <a href="{% url 'item:detail' item.id %}" style = 'width:300px;height:300px;font-size:20px;'>
+                    <div>
+                        <img src="{{ item.image.url }}" class = "rounded-t-xl" style = 'width:200px;margin-top:-2%;z-index:2;position:relative;margin-left:15%;'>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-b-xl" style = 'width:300px;height:50px;background-color:"white"; margin-top:3%;z-index:4;position:relative;margin-left:-1.5%;'>
+                        <h2 class="text-2xl" style = 'font-size:15px;height:150px;width:300px;margin-top:-5%;margin-left:-5%;'>{{ item.name }}</h2>
                     </div>
                 </a>
             </div>
+
+
         {% endfor %}
+		</div>
+	</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </body>
+</html>
+
 {% endblock %}

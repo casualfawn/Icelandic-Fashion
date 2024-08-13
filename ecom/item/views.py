@@ -6,7 +6,7 @@ def detail(request, pk):
     item = Item.objects.get(pk=pk)
     template = 'detail.html'
     context = {'item':item}
-    related_items = Item.objects.filter(category = item.category, is_sold=False).exclude(pk=pk)[0:3]
+    related_items = Item.objects.filter(category = item.category, is_sold=False).exclude(pk=pk)[0:10]
 
     return render(request, 'item/detail.html', {
         'item':item,
