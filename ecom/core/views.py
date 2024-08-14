@@ -23,7 +23,7 @@ def index(request):
             return render(request, 'core/searchindex.html', context={'data': data, })
 
     else:
-        items = Item.objects.all()
+        items = Item.objects.filter(is_featured=True)
         categories = Category.objects.all()
 
         return render(request, 'core/index.html', {
@@ -31,6 +31,28 @@ def index(request):
             'items': items,
         })
 
+def NewItems(request):
+    if 'q' in request.GET:
+        q = request.GET['q']
+        q = q.lower()
+        # data = Item.objects.get(category=q)
+
+        name = Lower(Category.objects.filter(name__icontains=q).values_list('id'))
+        data = Item.objects.filter(Q(category__in=name) | Q(collections__in=name))
+        if len(data) == 0:
+            data = Item.objects.exclude(Q(category=9))
+            return render(request, 'core/searchindex.html', {
+                'data': data
+            })
+        else:
+            return render(request, 'core/searchindex.html', context={'data': data, })
+    else:
+        items = Item.objects.filter(is_new=True)
+        categories = Category.objects.all()
+        return render(request, 'core/NewItems.html', {
+            'categories': categories,
+            'items': items,
+        })
 def WestFjordsCollection(request):
     items = Item.objects.filter(collections__name='West Fjords')
     collections = Collections.objects.all()

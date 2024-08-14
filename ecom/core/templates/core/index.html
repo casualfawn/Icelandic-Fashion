@@ -201,7 +201,7 @@
         <ul class="desktop-menu-category-list" style = 'margin-left:0%;'>
 
           <li class="menu-category">
-            <a href="#" class="menu-title">Home</a>
+            <a href="http://127.0.0.1:8000/NewItems" class="menu-title">New Items</a>
           </li>
 
 
@@ -213,19 +213,19 @@
 
             <ul class="dropdown-list">
 
-              <li class="dropdown-item">
-                <a href="/WestFjordsCollection">West Fjords</a>
-              </li>
 
-              <li class="dropdown-item">
-                <a href="EastFjordsCollection">East Fjords</a>
-              </li>
    <li class="dropdown-item">
                 <a href="/Reykjalife">Reykjalife</a>
               </li>
 
               <li class="dropdown-item">
                 <a href="/HellaMornings">Hella Mornings</a>
+              </li>
+     <li class="dropdown-item">
+                <a href="EastFjordsCollection">East Fjords</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="/WestFjordsCollection">West Fjords</a>
               </li>
 
 
@@ -585,7 +585,7 @@
               <h2 class="banner-title">Women's latest fashion sale</h2>
 
 
-              <a href="http://127.0.0.1:8000/EastFjordsCollection" class="banner-btn">Shop now</a>
+              <a href="http://127.0.0.1:8000/NewItems" class="banner-btn">Shop now</a>
 
             </div>
 
@@ -602,7 +602,7 @@
               <h2 class="banner-title">Men's Styles</h2>
 
 
-              <a href="http://127.0.0.1:8000/Reykjalife/" class="banner-btn">Shop now</a>
+              <a href="http://127.0.0.1:8000/NewItems/" class="banner-btn">Shop now</a>
 
             </div>
 
@@ -653,7 +653,26 @@
           <div class="sidebar-category" style = 'margin-top:6.5%;'>
 
             <div class="sidebar-top">
-              <h2 class="sidebar-title" style = 'font-size:20px;'>Shop by Category</h2>
+
+
+                             <style>
+       a {
+  font-family: "Minerva Modern";
+  font-size: 1.2rem;
+
+
+}
+                     a:hover {
+                     text-shadow: 0 0 7px bisque, 0 0 122px rgb(173 236 175);
+                     text-decoration: underline;
+                     text-decoration-color:pink;
+
+}
+
+
+       </style>
+
+              <h2 class="sidebar-title" style = 'font-size:20px;'>By Category</h2>
 
               <button class="sidebar-close-btn" data-mobile-menu-close-btn>
                 <ion-icon name="close-outline"></ion-icon>
@@ -813,9 +832,9 @@
                 <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
 
                   <div class="menu-title-flex">
-                    <img src="media/assets/images/icons/shirt.png" alt="perfume" class="menu-title-img" style = "width:35px;height:30px;margin-left:3.8%;">
+                    <img src="media/assets/images/icons/shirt.png" alt="perfume" class="menu-title-img" style = "width:35px;height:30px;margin-left:1%;">
 
-                    <a href ='TeesandTops' class="menu-title"style = 'margin-left:5.5%;font-size:120%;'>Tees</a>
+                    <a href ='TeesandTops' class="menu-title"style = 'width:200px;margin-left:-12%;font-size:120%;'>Tees & Tops</a>
                   </div>
 
                   <div>
@@ -861,12 +880,12 @@
 
               <li class="sidebar-menu-category">
 
-                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:2px;'>
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
 
                   <div class="menu-title-flex">
                     <img src="media/assets/images/icons/hat.png" alt="cosmetics" class="menu-title-img" style = 'width:25px;height:25px;margin-left:3.5%;'>
 
-                    <a href ='HatsandScarves' class="menu-title"style = 'width:200px;margin-left:-7.5%;font-size:120%;'>Hats & Scarves</a>
+                    <a href ='HatsandScarves' class="menu-title"style = 'width:200px;margin-left:.5%;font-size:120%;'>Hats & Scarves</a>
                   </div>
 
                   <div>
@@ -912,7 +931,7 @@
 
               <li class="sidebar-menu-category">
 
-                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:3px;'>
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
 
                   <div class="menu-title-flex">
                     <img src="media/assets/images/icons/glasses.png" alt="glasses" class="menu-title-img" style = 'margin-left:7%;width:25px;height:25px;'>
@@ -949,7 +968,7 @@
 
               <li class="sidebar-menu-category">
 
-                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:2px;'>
+                <button class="sidebar-accordion-menu" data-accordion-btn style = 'margin-top:5px;'>
 
                   <div class="menu-title-flex">
                     <img src="media/assets/images/icons/pants.png" alt="bags" class="menu-title-img" style = 'width:25px;height:25px;margin-left:7%'>
@@ -1444,7 +1463,7 @@
                     </div>
 
                     <a href="http://127.0.0.1:8000/items/57/">
-                      <h3 class="showcase-title"> Rugged Jacket of the Fjords</h3>
+                      <h3 class="showcase-title"> Fjords Jacket </h3>
                     </a>
 
                     <p class="showcase-desc">
@@ -1627,6 +1646,12 @@
       letter-spacing: 0.4px;
       text-transform: capitalize;
       font-size:22px;
+
+  }
+
+  menu-title:hover{
+  pointer-events:none;
+  }
 </style>
                       <style>
            h2 {
@@ -1636,6 +1661,8 @@
       letter-spacing: 0.8px;
       font-weight: var(--weight-600);
            }
+
+
        </style>
 
                         <h2 style = "background-color:rgb(245, 245, 245);">{{ item.name }}</h2>
